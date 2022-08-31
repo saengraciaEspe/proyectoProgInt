@@ -1,0 +1,9 @@
+import {Title} from '@angular/platform-browser';
+
+export interface Plato{
+
+    idplato?:number,
+    descplato?:string,
+    precioplato?:DoubleRange
+
+};

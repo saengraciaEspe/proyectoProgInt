@@ -38,3 +38,6 @@ costenito-app/typings
 # System files
 costenito-app/.DS_Store
 costenito-app/Thumbs.db
+
+#server files
+server/node_modules/*

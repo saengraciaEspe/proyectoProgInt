@@ -1,43 +1,19 @@
 <body>
-    <section>
-        <br>
-        <button mat-button>
-            <mat-card class="example-card">
-                <img mat-card-image src="https://www.tqma.com.ec/images/com_yoorecipe/banner_superior/4105_1.jpg"
-                    alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                    <h3>Apanados</h3>
-                    <p>2.00$</p>
-                </mat-card-content>
-            </mat-card>
-        </button>
-        <br>
-        <br>
-        <button mat-button>
-            <mat-card class="example-card">
-                <img mat-card-image
-                    src="https://images.aws.nestle.recipes/resized/8f592ab965966eef0763c05328927a0d_arroz-con-pollo-frito_1200_600.jpg"
-                    alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                    <h3>Fritos</h3>
-                    <p>2.00$</p>
-                </mat-card-content>
-            </mat-card>
-        </button>
-        <br>
-        <br>
-        <button mat-button>
-            <mat-card class="example-card">
-                <img mat-card-image
-                    src="http://www.lacostena.com.mx/media/uploads/Recipes/112-pechugatomatestatemados-1600x1000.jpg"
-                    alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                    <h3>Bistec</h3>
-                    <p>2.00$</p>
-                </mat-card-content>
-            </mat-card>
-        </button>
-        <br>
-        <br>
-    </section>
+   <table>
+        <thead>
+            <tr>
+                <th>iD</th>
+                <th>descripcion</th>
+                <th>precio</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let plato of platos">
+            <tr>
+                <td>{{plato.idplato}}</td>
+                <td>{{plato.descplato}}</td>
+                <td>{{plato.precioplato}}</td>
+            </tr>
+        </tbody>
+
+   </table>
 </body>
