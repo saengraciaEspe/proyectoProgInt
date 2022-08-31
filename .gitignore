@@ -1,0 +1,40 @@
+#files of costenito-app
+#Node
+costenito-app/node_modules/*
+costenito-app/npm-debug.log
+costenito-app/yarn-error.log
+# Compiled output
+costenito-app/dist
+costenito-app/tmp
+costenito-app/out-tsc
+costenito-app/bazel-out
+
+# IDEs and editors
+costenito-app/.idea/
+costenito-app/.project
+costenito-app/.classpath
+costenito-app/.c9/
+costenito-app/*.launch
+costenito-app/.settings/
+costenito-app/*.sublime-workspace
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+
+# Miscellaneous
+costenito-app/.angular/cache
+costenito-app/.sass-cache/
+costenito-app/connect.lock
+costenito-app/coverage
+costenito-app/libpeerconnection.log
+costenito-app/testem.log
+costenito-app/typings
+
+# System files
+costenito-app/.DS_Store
+costenito-app/Thumbs.db

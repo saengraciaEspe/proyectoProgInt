@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="opened=!opened" class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <span class="">El Costeñito</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)] = "opened">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/menu"> <mat-icon>flatware</mat-icon> Menu</a>
+      <a mat-list-item routerLink="/pedido"> <mat-icon>room_service</mat-icon> Pedido</a>
+      <a mat-list-item routerLink="/salir"> <mat-icon>logout</mat-icon> Cerrar Sesion</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
