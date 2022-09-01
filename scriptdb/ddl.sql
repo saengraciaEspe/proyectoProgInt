@@ -109,3 +109,5 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 INSERT INTO plato(descplato,precioplato) VALUES('arroz con pescado frito',2);
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';

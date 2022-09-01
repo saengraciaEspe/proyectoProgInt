@@ -11,19 +11,23 @@ import { PedidoComponent } from './pedido/pedido.component';
 import { SalirComponent } from './salir/salir.component';
 
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import { AddComponent } from './plato/add/add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     PedidoComponent,
-    SalirComponent
+    SalirComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

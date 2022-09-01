@@ -7,21 +7,20 @@ import {PlatoService} from '../services/plato/plato.service'
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  platos :any=[];
+ 
 
-  constructor(public platoService: PlatoService) { }
+  constructor(private platoService: PlatoService) { }
 
   ngOnInit(): void {
-    this.getALLPlatos();
+    this.getAllPlatos();
   }
-  getALLPlatos(){
-    try{
-    this.platos=this.platoService.getAllPlatos();
+  getAllPlatos(){
     
-    
-    ;
-    }catch(err){
-      console.log(err);
-    }
+        this.platoService.getAllPlatos().subscribe(
+          res=>{
+                  console.log(res);
+                },
+                  err=>console.log(err)
+        );
   }
 }

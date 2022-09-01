@@ -1,20 +1,19 @@
 var mysql=require('mysql');
-var pool=mysql.createPool({
+var conexion=mysql.createConnection({
     host        :   'localhost',
     user        :   'root',
     password    :   'root',
     database    :   'ejem'
 });
 
+conexion.connect((err)=>{
 
-var getConnection=function(cb){
+    if(err){
+        console.log("link to db failed"+err)
+    }else{
+        console.log("link to db success!!")
+    }
 
-    pool.getConnection(function (err, connection){
+});
 
-        if(err){
-            return cb (err);
-        }
-        cb(null,connection);
-    });
-};
-module.exports=getConnection;
+module.exports=conexion;
