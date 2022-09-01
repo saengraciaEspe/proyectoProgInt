@@ -15,12 +15,12 @@ router.get('/',(req, res)=>{
     })
 
 })
-/*
-// get un equipo
-router.get('/:id',(req, res)=>{
-    const {id} = req.params
+
+// get un plato
+router.get('/:idplato',(req, res)=>{
+    const {idplato} = req.params
     let sql ='select * from plato where idplato = ?';
-    conexion.query(sql,[id],(err, rows, fields)=>{
+    conexion.query(sql,[idplato],(err, rows, fields)=>{
         if(err) throw err;
         else{
             res.json(rows)
@@ -28,24 +28,24 @@ router.get('/:id',(req, res)=>{
     })
 })
 
-//agregar equipo
+//agregar plato
 router.post('/',( req, res)=>{
-    const{nombre, logo} = req.body
+    const{descplato, precioplato} = req.body
 
-    let sql = `insert into tb_equipo(nombre, logo) values('${nombre}','${logo}')`
+    let sql = `insert into plato(descplato, precioplato) values('${descplato}','${precioplato}')`
     conexion.query(sql, (err, rows, fields)=>{
         if(err) throw err
         else{
-            res.json({status: 'equipo agregado'})
+            res.json({status: 'plato agregado'})
         }
     })
 })
 
 //eliminar 
-router.delete('/:id',(req, res)=>{
-    const{id} = req.params
+router.delete('/:idplato',(req, res)=>{
+    const{idplato} = req.params;
 
-    let sql =`delete from tb_equipo where id_equipo = '${id}'`
+    let sql =`delete from plato where idplato = '${Number(idplato)}'`
     conexion.query(sql, (err, rows, fields)=>{
         if(err) throw err
         else{
@@ -55,23 +55,23 @@ router.delete('/:id',(req, res)=>{
 });
 
 //modificar
-router.put('/:id',(req, res)=>{
-    const{id}=req.params
-    const{nombre, logo} = req.body
+router.put('/:idplato',(req, res)=>{
+    const{idplato}=req.params
+    const{descplato, precioplato} = req.body
 
-    let sql = `update tb_equipo set 
-                nombre ='${nombre}',
-                logo='${logo}'
-                where id_equipo = '${id}'`
+    let sql = `update plato set 
+                descplato ='${descplato}',
+                precioplato='${precioplato}'
+                where id_equipo = '${idplato}'`
     
     conexion.query(sql, (err, rows, fields)=>{
         if(err) throw err
         else{
-            res.json({status: 'equipo modificado'})
+            res.json({status: 'plato modificado'})
         }
     })
 
 })
 //----------------------------------
-*/
+
 module.exports = router

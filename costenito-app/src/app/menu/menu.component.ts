@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PlatoService} from '../services/plato/plato.service'
+import {PlatoService,Plato} from '../services/plato/plato.service'
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +7,8 @@ import {PlatoService} from '../services/plato/plato.service'
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
- 
+ //variables
+  listpl:Plato[]=[];
 
   constructor(private platoService: PlatoService) { }
 
@@ -18,9 +19,22 @@ export class MenuComponent implements OnInit {
     
         this.platoService.getAllPlatos().subscribe(
           res=>{
-                  console.log(res);
+                  this.listpl=<any>res;
                 },
                   err=>console.log(err)
         );
   }
+
+  deletePlato(pl :any){
+    this.platoService.deletePlato(Number(pl.idplato)).subscribe(
+      res=>{
+              console.log('plato eliminado');
+              this.getAllPlatos();
+            },
+            err=>console.log(err)
+
+    );
+  }
+
+
 }

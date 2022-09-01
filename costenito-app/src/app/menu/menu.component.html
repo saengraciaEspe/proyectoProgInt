@@ -1,20 +1,26 @@
-<body>
+
+    <div>
+        <a routerLink="/plato/add">Agregar</a>
+    </div>
    <table>
         <thead>
             <tr>
                 <th>iD</th>
                 <th>descripcion</th>
                 <th>precio</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a routerLink="/plato/add">Agregar</a></td>
+            <tr *ngFor="let pl of listpl">
+                <td>{{pl.idplato}}</td>
+                <td>{{pl.descplato}}</td>
+                <td>{{pl.precioplato}}</td>
+                <td><a routerLink="#">Editar</a>
+                </td>
+                <td><button (click)="deletePlato(pl)" type="button">eliminar</button></td>
             </tr>
         </tbody>
 
    </table>
-</body>
